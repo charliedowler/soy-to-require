@@ -1,25 +1,17 @@
 module.exports = function (grunt) {
   grunt.registerTask('soy-to-require', 'Append require wrapper', function () {
-    var fs = require('fs');
-    var namespace = this.data.namespace
-    var templates = this.data.templates;
+    var properties = grunt.config.data["soy-to-require"];
+    if (typeof properties == "undefined") throw new Error("grunt task needs soy-to-require properties");
 
-    fs.readdir(templates, function (err, list) {
-      list.forEach(function (filename, list) {
-        var fileContents;
-        fs.readFile(__dirname + '\\' + templates + '\\' + filename, function (err, data) {
-          if (err) throw err;
-          fileContents = data;
-          var requireString = 'define(function(require) {' +
-            '\nvar soy = require("soy");\n' + fileContents;
-          fs.writeFile(__dirname + '\\' + templates + '\\' + filename, requireString, function (err) {
-            if (err) throw err;
-            fs.appendFile(__dirname + '\\' + templates + '\\' + filename, '\nreturn ' + namespace + '.' + filename.split('.')[0] + '\n});', function (err) {
-              if (err) throw err;
-            });
-          });
-        });
-      });
+    var namespace = properties.namespace;
+    var templates = properties.templates;
+
+    grunt.file.recurse(templates, function (absolute, folder, subdir, filename) {
+      var fileContents = grunt.file.read(absolute);
+      var requireString = 'define(function(require) {' +
+        '\nvar soy = require("soy");\n' + fileContents +
+        '\nreturn ' + namespace + '.' + filename.split('.')[0] + ';\n});';
+      grunt.file.write(absolute, requireString);
     });
-  })
+  });
 }
