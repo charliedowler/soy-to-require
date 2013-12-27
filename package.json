@@ -1,0 +1,29 @@
+{
+  "name": "soy-to-require",
+  "version": "0.0.1",
+  "description": "Add require js wrapper to soy templates through a grunt task",
+  "main": "index.js",
+  "homepage": "https://github.com/charliedowler/soy-to-require",
+  "keywords": [
+    "requirejs",
+    "soy"
+  ],
+  "bugs": {
+    "url": "https://github.com/charliedowler/soy-to-require/issues"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "grunt": "0.4.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/charliedowler/soy-to-require.git"
+  },
+  "author": {
+    "name": "Charlie Dowler",
+    "email": "charliedowler15@gmail.com"
+  },
+  "license": "MIT"
+}
