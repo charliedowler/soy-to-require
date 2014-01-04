@@ -4,7 +4,7 @@ A simple grunt task to wrap compiled soy templates with require.
 
 ## Getting Started
 
-This plugin requires Grunt '~0.4.0'
+This plugin requires Grunt '~0.4.x'
 
 ```shell
 npm install soy-to-require --save-dev
