@@ -6,6 +6,20 @@ A simple grunt task to wrap compiled soy templates with require.
 
 This plugin requires Grunt '~0.4.x'
 
+Soy must be included in your require config. Example:
+
+	require.config({
+  		baseUrl: 'js/',
+  		paths: {
+    		"soy": "https://closure-templates.googlecode.com/svn-history/r9/trunk/javascript/soyutils"
+  		},
+  		shim: {
+    		"soy": {
+    			exports: "soy"
+    		}
+  		}
+	});
+
 ```shell
 npm install soy-to-require --save-dev
 ```
