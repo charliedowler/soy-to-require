@@ -14,7 +14,8 @@
     "node": "*"
   },
   "dependencies": {
-    "grunt": "0.4.x"
+    "grunt": "0.4.x",
+    "colors": "0.6.2"
   },
   "repository": {
     "type": "git",

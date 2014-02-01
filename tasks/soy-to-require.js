@@ -1,7 +1,11 @@
 module.exports = function (grunt) {
-  grunt.registerTask('soy-to-require', 'Append require wrapper', function () {
+  grunt.registerTask('soy-to-require', 'Wrap soy template in require', function () {
+    require('colors');
+
+    var count = 0;
     var properties = grunt.config.data["soy-to-require"];
-    if (typeof properties == "undefined") throw new Error("grunt task needs soy-to-require properties");
+
+    if (typeof properties == "undefined") throw new Error("Can't find soy-to-require config, please check the readme for help.");
 
     var namespace = properties.namespace;
     var templates = properties.templates;
@@ -12,6 +16,8 @@ module.exports = function (grunt) {
         '\nvar soy = require("soy");\n' + fileContents +
         '\nreturn ' + namespace + '.' + filename.split('.')[0] + ';\n});';
       grunt.file.write(absolute, requireString);
+      count++;
     });
+    console.log("Successfully generated " + count.toString().cyan + " templates.");
   });
 }
