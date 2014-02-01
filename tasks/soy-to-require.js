@@ -1,5 +1,7 @@
 module.exports = function (grunt) {
   grunt.registerTask('soy-to-require', 'Wrap soy template in require', function () {
+    var Beautifier = require('node-js-beautify'),
+      formatter = new Beautifier();
     require('colors');
 
     var count = 0;
@@ -15,6 +17,7 @@ module.exports = function (grunt) {
       var requireString = 'define(function(require) {' +
         '\nvar soy = require("soy");\n' + fileContents +
         '\nreturn ' + namespace + '.' + filename.split('.')[0] + ';\n});';
+      requireString = formatter.beautify_js(requireString, {});
       grunt.file.write(absolute, requireString);
       count++;
     });

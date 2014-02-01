@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "grunt": "0.4.x",
-    "colors": "0.6.2"
+    "colors": "0.6.2",
+    "node-js-beautify": "0.1.0"
   },
   "repository": {
     "type": "git",
