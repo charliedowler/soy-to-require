@@ -23,4 +23,4 @@ module.exports = function (grunt) {
     });
     console.log("Successfully generated " + count.toString().cyan + " templates.");
   });
-}
+};

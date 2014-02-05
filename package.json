@@ -18,9 +18,13 @@
     "colors": "0.6.2",
     "node-js-beautify": "0.1.0"
   },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.8.0"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/charliedowler/soy-to-require.git"
+    "url": "git://github.com/charliedowler/soy-to-require.git",
+    "job": "http://expenseapp.io:8080/job/soy-to-require"
   },
   "author": {
     "name": "Charlie Dowler",
