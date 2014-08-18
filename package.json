@@ -1,34 +1,41 @@
 {
   "name": "soy-to-require",
-  "version": "0.0.2",
-  "description": "Add require js wrapper to soy templates through a grunt task",
+  "version": "0.1.0",
+  "description": "Wrap your closure templates in a require js define block",
   "homepage": "https://github.com/charliedowler/soy-to-require",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:charliedowler/soy-to-require.git"
+  },
+  "author": {
+    "name": "charliedowler",
+    "email": "charliedowler15@gmail.com",
+    "url": "https://github.com/charliedowler"
+  },
   "keywords": [
-    "requirejs",
-    "soy"
+    "gruntplugin",
+    "closure",
+    "soy",
+    "templates"
   ],
-  "bugs": {
-    "url": "https://github.com/charliedowler/soy-to-require/issues"
-  },
+  "main": "Gruntfile.js",
   "engines": {
-    "node": "*"
+    "node": ">=0.10.0"
   },
+  "license": "MIT",
   "dependencies": {
-    "grunt": "0.4.x",
     "colors": "0.6.2",
     "node-js-beautify": "0.1.0"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.8.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "grunt": "~0.4.2",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/charliedowler/soy-to-require.git",
-    "job": "http://expenseapp.io:8080/job/soy-to-require"
-  },
-  "author": {
-    "name": "Charlie Dowler",
-    "email": "charliedowler15@gmail.com"
-  },
-  "license": "MIT"
+  "scripts": {
+    "test": "grunt test"
+  }
 }
