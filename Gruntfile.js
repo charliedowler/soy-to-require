@@ -34,8 +34,10 @@ module.exports = function (grunt) {
     // Configuration to be run (and then tested).
     soy_to_require: {
       TestTask: {
-        namespace: 'Testing',
-        output: 'tmp/',
+        options: {
+          namespace: 'Testing',
+          output: 'tmp/'
+        },
         files: {
           'test/fixtures': ['test/fixtures/MyView.soy.js', 'test/fixtures/MyView.soy.js']
         }

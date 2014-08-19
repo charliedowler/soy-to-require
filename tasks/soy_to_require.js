@@ -19,8 +19,9 @@ module.exports = function (grunt) {
     var path = require('path');
     require('colors');
 
-    var namespace = this.data.namespace;
-    var output = this.data.output;
+    var options = this.options();
+    var namespace = options.namespace;
+    var output = options.output;
     var count = 0;
 
     // Iterate over all specified file groups.
