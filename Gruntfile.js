@@ -32,14 +32,15 @@ module.exports = function (grunt) {
     },
 
     // Configuration to be run (and then tested).
-    soy_to_require: {
+    'soy-to-require': {
       TestTask: {
         options: {
           namespace: 'Testing',
+          prefix: 'abc',
           output: 'tmp/'
         },
         files: {
-          'test/fixtures': ['test/fixtures/MyView.soy.js', 'test/fixtures/MyView.soy.js']
+          'test/fixtures': ['test/fixtures/MyView.soy.js','test/fixtures/UsesView.soy.js']
         }
       }
     },
@@ -56,7 +57,7 @@ module.exports = function (grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'soy_to_require', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'soy-to-require', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
