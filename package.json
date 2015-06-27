@@ -1,6 +1,6 @@
 {
   "name": "soy-to-require",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Wrap your closure templates in a require js define block",
   "homepage": "https://github.com/charliedowler/soy-to-require",
   "repository": {
