@@ -24,10 +24,16 @@ var grunt = require('grunt');
 
 exports.soy_to_require = {
   TestTask: function (test) {
+    var files = [
+      [ 'tmp/abc/MyView.soy.js',   'test/expected/MyView.soy.js' ],
+      [ 'tmp/abc/UsesView.soy.js', 'test/expected/UsesView.soy.js' ]
+    ];
 
-    var actual = grunt.file.read('tmp/MyView.soy.js');
-    var expected = grunt.file.read('test/expected/MyView.soy.js');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
+    files.forEach(function(file) {
+      var actual = grunt.file.read(file[0]);
+      var expected = grunt.file.read(file[1]);
+      test.equal(actual, expected, file[0] + ' differs from ' + file[1]);
+    });
 
     test.done();
   }
